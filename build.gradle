@@ -8,11 +8,10 @@ buildscript {
     ext.interceptor_version = "4.9.1"
     ext.coroutines_android_version = "1.4.3"
     ext.coroutines_core_version = "1.5.0-RC"
-    ext.glide_version = "4.12.0"
     ext.nav_version = "2.3.5"
-    ext.recyclerview_version = "1.2.0"
     ext.hilt_version = "2.35.1"
     ext.jetpack_hilt_version = "1.0.0-alpha03"
+    ext.jetpack_hilt_version_compiler = "1.0.0-beta01"
 
 
     repositories {

@@ -13,13 +13,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+
+
 @InstallIn(SingletonComponent::class)
 
 @Module
 object NetworkModule {
 
-    @Provides
-    fun providesBaseUrl() : String {
+@Provides
+    fun providesBaseUrl(): String {
         return BASE_URL
     }
 
@@ -29,7 +31,7 @@ object NetworkModule {
     }
 
     @Provides
-    fun providesConverterFactory() : Converter.Factory {
+    fun providesConverterFactory(): Converter.Factory {
         return GsonConverterFactory.create()
     }
 
@@ -45,7 +47,11 @@ object NetworkModule {
     }
 
     @Provides
-    fun providesRetrofit(baseUrl: String, converterFactory: Converter.Factory, okHttpClient: OkHttpClient) : Retrofit{
+    fun providesRetrofit(
+        baseUrl: String,
+        converterFactory: Converter.Factory,
+        okHttpClient: OkHttpClient
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(converterFactory)
@@ -54,7 +60,7 @@ object NetworkModule {
     }
 
     @Provides
-    fun providesApiService(retrofit: Retrofit) : ApiService{
+    fun providesApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
 }

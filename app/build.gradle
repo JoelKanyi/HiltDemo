@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -64,10 +68,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_version"
 
-    //Glide
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    kapt "com.github.bumptech.glide:compiler:$glide_version"
-
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
@@ -79,7 +79,6 @@ dependencies {
 
     //Jetpack Hilt library
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$jetpack_hilt_version"
-    kapt "androidx.hilt:hilt-compiler:1.0.0-beta01"
-
+    kapt "androidx.hilt:hilt-compiler:$jetpack_hilt_version_compiler"
 
 }
