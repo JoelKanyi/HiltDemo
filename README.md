@@ -2,7 +2,7 @@
 
 # HiltDemo
 
-A simple app that consumes Github REST API to display public repositories in the opensource254 org here on github. Built with clean architecture principles and jetpack libraries.
+A simple app that consumes Github REST API to display public repositories in the opensource254 org here on github. I was trying to learn about dependency injection with dagger hilt, built with clean architecture principles and jetpack libraries.
 
 Min Api Level : 16 
 
