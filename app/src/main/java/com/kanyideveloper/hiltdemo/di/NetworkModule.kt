@@ -14,13 +14,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-
 @InstallIn(SingletonComponent::class)
 
 @Module
 object NetworkModule {
 
-@Provides
+    @Provides
     fun providesBaseUrl(): String {
         return BASE_URL
     }

@@ -8,11 +8,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.kanyideveloper.hiltdemo.R
-import com.kanyideveloper.hiltdemo.model.GithubDataModel
+import com.kanyideveloper.hiltdemo.model.Opensource254ReposModel
 
-class RepositoriesAdapter : ListAdapter<GithubDataModel.GithubDataModelItem, RepositoriesAdapter.RepositoriesViewHolder>(DiffUtilGithubDataModel()) {
+class RepositoriesAdapter :
+    ListAdapter<Opensource254ReposModel.Opensource254ReposModelItem, RepositoriesAdapter.RepositoriesViewHolder>(
+        DiffUtilGithubDataModel()
+    ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoriesViewHolder {
-        return RepositoriesViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.repos_row, parent, false))
+        return RepositoriesViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.repos_row, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: RepositoriesViewHolder, position: Int) {
@@ -20,8 +25,8 @@ class RepositoriesAdapter : ListAdapter<GithubDataModel.GithubDataModelItem, Rep
         holder.bind(item)
     }
 
-    class RepositoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bind(item: GithubDataModel.GithubDataModelItem?) {
+    class RepositoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(item: Opensource254ReposModel.Opensource254ReposModelItem?) {
             val repoName = itemView.findViewById<TextView>(R.id.repoName)
             val repoDescription = itemView.findViewById<TextView>(R.id.repoDescription)
 
@@ -31,19 +36,20 @@ class RepositoriesAdapter : ListAdapter<GithubDataModel.GithubDataModelItem, Rep
         }
     }
 
-    class DiffUtilGithubDataModel : DiffUtil.ItemCallback<GithubDataModel.GithubDataModelItem>() {
+    class DiffUtilGithubDataModel :
+        DiffUtil.ItemCallback<Opensource254ReposModel.Opensource254ReposModelItem>() {
         override fun areItemsTheSame(
-            oldItem: GithubDataModel.GithubDataModelItem,
-            newItem: GithubDataModel.GithubDataModelItem
+            oldItem: Opensource254ReposModel.Opensource254ReposModelItem,
+            newItem: Opensource254ReposModel.Opensource254ReposModelItem
         ): Boolean {
-            return oldItem.id == newItem.id
+            return newItem.id == oldItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: GithubDataModel.GithubDataModelItem,
-            newItem: GithubDataModel.GithubDataModelItem
+            oldItem: Opensource254ReposModel.Opensource254ReposModelItem,
+            newItem: Opensource254ReposModel.Opensource254ReposModelItem
         ): Boolean {
-            return newItem == oldItem
+            return oldItem == newItem
         }
     }
 }

@@ -1,13 +1,13 @@
 package com.kanyideveloper.hiltdemo.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.kanyideveloper.hiltdemo.databinding.ActivityMainBinding
-import com.kanyideveloper.hiltdemo.model.GithubDataModel
+import com.kanyideveloper.hiltdemo.model.Opensource254ReposModel
 import com.kanyideveloper.hiltdemo.network.ResultData
 import com.kanyideveloper.hiltdemo.ui.adapter.RepositoriesAdapter
 import com.kanyideveloper.hiltdemo.viewmodel.MainViewModel
@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
 
     private val TAG = "MainActivity"
 
-    private  val adapter by lazy { RepositoriesAdapter() }
+    private val adapter by lazy { RepositoriesAdapter() }
     private lateinit var binding: ActivityMainBinding
-    private val mainViewModel : MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
-    private val repositoryObserver = Observer<ResultData<GithubDataModel?>>{ resultData ->
-        when(resultData){
+    private val repositoryObserver = Observer<ResultData<Opensource254ReposModel?>> { resultData ->
+        when (resultData) {
             is ResultData.Loading -> {
                 binding.progressIndicator.show()
 
@@ -69,6 +69,6 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
 
     private fun getDataAndSubscribeEvents() {
         val repositoriesListLiveData = mainViewModel.getRepositories()
-        repositoriesListLiveData.observe(this,repositoryObserver)
+        repositoriesListLiveData.observe(this, repositoryObserver)
     }
 }

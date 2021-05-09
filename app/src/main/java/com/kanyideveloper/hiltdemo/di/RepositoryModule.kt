@@ -10,10 +10,10 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 @InstallIn(ActivityRetainedComponent::class)
 
 @Module
-object RepositoryModule{
+object RepositoryModule {
 
     @Provides
-    fun providesDataRepo(apiService: ApiService) : DataRepository{
+    fun providesDataRepo(apiService: ApiService): DataRepository {
         return DataRepository(apiService)
     }
 }
