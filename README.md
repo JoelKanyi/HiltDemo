@@ -29,10 +29,10 @@ Libraries used in the whole application are:
 - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) -  A lifecycle-aware data holder with the observer pattern
 - [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) - A concurrency design pattern that you can use on Android to simplify code that executes asynchronously
 - [Retofit](https://square.github.io/retrofit) -  Retrofit is a REST Client for Java and Android by Square inc under Apache 2.0 license. Its a simple network library that used for network transactions. By using this library we can seamlessly capture JSON response from web service/web API.
-- [Hilt](https://square.github.io/retrofit) -  A dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project
-- [Navigation Components](https://square.github.io/retrofit) -  Helps you implement navigation, from simple button clicks to more complex patterns, such as app bars and the navigation drawer.
-- [Logging Interceptor](https://square.github.io/retrofit) -  ogs HTTP request and response data.
-- [Material Libarary](https://square.github.io/retrofit) -  Modular and customizable Material Design UI components for Android 
+- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) -  A dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project
+- [Navigation Components](https://developer.android.com/guide/navigation/navigation-getting-started) -  Helps you implement navigation, from simple button clicks to more complex patterns, such as app bars and the navigation drawer.
+- [Logging Interceptor](https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md) -  ogs HTTP request and response data.
+- [Material Libarary](https://material.io/develop/android) -  Modular and customizable Material Design UI components for Android 
 
 
 ## Demo
